@@ -31,7 +31,7 @@ async function run() {
       {
           const spot = req.body
           console.log('new spot',spot)
-          const result = await usersCollection.insertOne(spot);
+          const result = await spotsCollection.insertOne(spot);
           res.send(result)
       })
       // Send a ping to confirm a successful connection
