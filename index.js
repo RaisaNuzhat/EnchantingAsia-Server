@@ -25,13 +25,13 @@ async function run() {
     try {
       // Connect the client to the server	(optional starting in v4.7)
       await client.connect();
-      const database = client.db("userDB");
-      const usersCollection = database.collection("users");
-      app.post('/users',async(req,res) =>
+      const database = client.db("touristDB");
+      const spotsCollection = database.collection("spots");
+      app.post('/spots',async(req,res) =>
       {
-          const user = req.body
-          console.log('new user',user)
-          const result = await usersCollection.insertOne(user);
+          const spot = req.body
+          console.log('new spot',spot)
+          const result = await usersCollection.insertOne(spot);
           res.send(result)
       })
       // Send a ping to confirm a successful connection
